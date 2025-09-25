@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Enter your code
+      </h1>
+      <p class="govuk-body">Find this in the email we sent you. The email may take a few minutes to arrive. <br>
+      <br> Be aware that this code will expire 30 minutes after we send it.
+      </p>
+
+      {{ govukInput({
+        classes: "govuk-input--width-5",
+        id: "width-5",
+        name: "width5"
+      }) }}
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            My code did not arrive or does not work
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>You may have made a mistake with your email address</li>
+            <li>Check your junk or spam folder</li>
+            <li>The code has expired</li>
+          </ul>
+          <p class="govuk-body">
+            <a href="request-code" class="govuk-!-margin-bottom-9">Get a new code</a>
+          </p>
+          <p class="govuk-body">
+            If you continue to an issue, call us on 0303 444 5000 Monday to Friday, 9am to midday (except public holidays).
+          </p>
+        </div>
+      </details>
+
+      <form class="form" action="/path/of/next/page" method="post">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

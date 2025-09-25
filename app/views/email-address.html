@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Tell us your email address",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  classes: "govuk-input--width-30",
+  hint: {
+    text: "If we recognise this address, we will send you a code."
+  },
+  id: "email-address",
+  name: "emailadress",
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+<form class="form" action="/enter-code" method="post">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+</form>
+{% endblock %}
