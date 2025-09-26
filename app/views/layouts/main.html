@@ -7,10 +7,13 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% block header %}
-
-    {{ govukHeader() }}
-    {{ govukServiceNavigation({
-        serviceName: serviceName
-    })}}
-
+  {# Set serviceName in config.js. #}
+  {% set locale = "en" %}
+  {{ pinsHeader({
+    homepageUrl: "/",
+    serviceName: "",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    locale: locale
+  }) }}
 {% endblock %}
