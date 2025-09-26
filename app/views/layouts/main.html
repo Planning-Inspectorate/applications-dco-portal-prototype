@@ -8,9 +8,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block header %}
 
-    {{ govukHeader() }}
-    {{ govukServiceNavigation({
+
+
+    {% include "includes/PINS-header--internal.html" %}
+
+    <!-- {{ govukServiceNavigation({
         serviceName: serviceName
-    })}}
+    })}} -->
 
 {% endblock %}
