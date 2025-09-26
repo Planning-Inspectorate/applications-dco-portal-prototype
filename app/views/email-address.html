@@ -15,24 +15,58 @@
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-{{ govukInput({
-  label: {
-    text: "Tell us your email address",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  classes: "govuk-input--width-30",
-  hint: {
-    text: "If we recognise this address, we will send you a code."
-  },
-  id: "email-address",
-  name: "emailadress",
-  inputmode: "numeric",
-  spellcheck: false
-}) }}
-<form class="form" action="/enter-code" method="post">
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-</form>
+<!-- // Error summary -->
+
+    <!-- <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Error summary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+
+<!-- // Error message -->
+
+    <!-- <div class="govuk-form-group govuk-form-group--error">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="event-name">
+          Tell us your email address
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        If we recognise this address, we will send you a code.
+      </div>
+      <p id="email-address-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Error message
+      </p>
+      <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="two-thirds" name="twoThirds" type="text">
+    </div> -->
+
+<!-- // Happy path -->
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="event-name">
+          Tell us your email address
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        If we recognise this address, we will send you a code.
+      </div>
+      <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="twoThirds" type="text">
+    </div>
+
+    <form class="form" action="/enter-code" method="post">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+    </form>
+    
 {% endblock %}
