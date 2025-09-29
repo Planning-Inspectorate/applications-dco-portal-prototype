@@ -4,5 +4,10 @@
 //
 
 // Add extra styles here
-@import "PINS-header--internal";
-@import "settings";
+
+// Additions for the font and the Planning Inspectorate header
+
+@import "settings";                 // font changes are here
+
+@import "PINS-header--internal";    // this imports the styles for the planning inspectorate header
+                                    // the styles are in the sass folder (the same folder)
