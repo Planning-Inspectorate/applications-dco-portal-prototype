@@ -51,25 +51,27 @@
 
 <!-- // Happy path -->
 
-     <div class="govuk-form-group">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--l" for="event-name">
-          What is your email address?
-        </label>
-      </h1>
-      <div id="event-name-hint" class="govuk-hint">
-        If we recognise this address, we will send you a code.
-      </div>
-      <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="twoThirds" type="text">
-    </div>
+<form class="form" action="/enter-code" method="post">
 
-     
-    <div class="govuk-form-group"
-      <form class="form" action="/enter-code" method="post">
-            {{ govukButton({
-              text: "Continue"
-            }) }}
-      </form>
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="event-name">
+        What is your email address?
+      </label>
+    </h1>
+    <div id="event-name-hint" class="govuk-hint">
+      If we recognise this address, we will send you a code.
     </div>
+    <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="email" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </div>
+
+</form>
+
     
 {% endblock %}
