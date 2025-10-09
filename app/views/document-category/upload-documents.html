@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Application form and related information</span>
+        <h1 class="govuk-heading-l">Upload your documents</h1>
+        <p>Choose a single file or multiple files to upload.</p>
+        <p>Each file must be a PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, MSG, JPG, JPEG, MPEG, MP3, MP4, MOV, PNG, TIF, or TIFF.</p>
+        <p>The total size of your uploaded files must be smaller than 1GB.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+                Upload a file
+            </label>
+            <div
+                class="govuk-drop-zone"
+                data-module="govuk-file-upload">
+                <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+            </div>
+        </div>
+        <form class="form" action="/document-category/document-type" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
