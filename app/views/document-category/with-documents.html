@@ -16,7 +16,7 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 <span class="govuk-caption-l">Your documents</span>
-<h1 class="govuk-heading-l">Application form and related information</h1>
+<h1 class="govuk-heading-l">Application form related information</h1>
 <table class="govuk-table govuk-table--small-text-until-tablet">
   <caption class="govuk-table__caption govuk-table__caption--m">Documents uploaded</caption>
   <thead class="govuk-table__head">
@@ -25,18 +25,37 @@
       <th scope="col" class="govuk-table__header">Document type</th>
       <th scope="col" class="govuk-table__header">APFP Regulation</th>
       <th scope="col" class="govuk-table__header">Certification</th>
-      <th scope="col" class="govuk-table__header">Delete</th>
+      <th scope="col" class="govuk-table__header">Date uploaded</th>
+      <th scope="col" class="govuk-table__header">Remove</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">ApplicationCoverLetter.pdf</th>
+      <th scope="row" class="govuk-table__header">ApplicationCoverLetter1.pdf</th>
       <td class="govuk-table__cell">Application Cover Letter</td>
       <td class="govuk-table__cell">5(2)(b)</td>
       <td class="govuk-table__cell">Certified</td>
-      <td class="govuk-table__cell"><a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> date of birth</span></a></td>
+      <td class="govuk-table__cell">13/10/2025 11:30</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> date of birth</span></a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">ApplicationCoverLetter2.pdf</th>
+      <td class="govuk-table__cell">Application Cover Letter</td>
+      <td class="govuk-table__cell">5(2)(b)</td>
+      <td class="govuk-table__cell">Certified</td>
+      <td class="govuk-table__cell">13/10/2025 11:30</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> date of birth</span></a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">ApplicationCoverLetter3.pdf</th>
+      <td class="govuk-table__cell">Application Cover Letter</td>
+      <td class="govuk-table__cell">5(2)(b)</td>
+      <td class="govuk-table__cell">Certified</td>
+      <td class="govuk-table__cell">13/10/2025 11:30</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> date of birth</span></a></td>
     </tr>
   </tbody>
+  
 </table>
 <form class="form" action="/document-category/upload-documents" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -66,7 +85,11 @@
     </div>
   </fieldset>
 </div>
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
+<form class="form" action="/tasklist" method="post">
+    <div class="govuk-form-group">
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+    </div>
+</form>
 {% endblock %}
