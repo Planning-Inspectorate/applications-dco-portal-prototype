@@ -49,6 +49,26 @@
         </p>
         <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="two-thirds" name="twoThirds" type="text">
         </div>
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Can't find your reference number?
+                </span>
+                </summary>
+                <div class="govuk-details__text">
+                <p class="govuk-body">
+                    You can contact our customer support team.
+                </p>
+                <p class="govuk-body">
+                    
+                    Telephone: 0303 444 5000 <br>
+                    Monday to Friday, 9am to midday (except public holidays) <br>
+                    <a href="https://www.gov.uk/call-charges">Find out about call charges.</a>
+                </p>
+                </div>
+            </details>
         <form class="form" action="/email-address" method="post">
                 {{ govukButton({
                 text: "Continue"
@@ -72,6 +92,26 @@
                 </div>
                 <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="email" type="text">
             </div>
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Can't find your reference number?
+                </span>
+                </summary>
+                <div class="govuk-details__text">
+                <p class="govuk-body">
+                    You can contact our customer support team.
+                </p>
+                <p class="govuk-body">
+                    
+                    Telephone: 0303 444 5000 <br>
+                    Monday to Friday, 9am to midday (except public holidays) <br>
+                    <a href="https://www.gov.uk/call-charges">Find out about call charges.</a>
+                </p>
+                </div>
+            </details>
 
             <form class="form" action="/email-address" method="post">
                 {{ govukButton({
@@ -79,8 +119,11 @@
                 }) }}
             </form>
         </form>
+        
     </div>
 </div>
+
+
 
     
 {% endblock %}
