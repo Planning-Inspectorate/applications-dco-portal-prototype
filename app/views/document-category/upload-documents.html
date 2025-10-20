@@ -54,10 +54,10 @@
     <style>
       .app-file-row {
         display: flex;
-        align-items: baseline; /* neat alignment of filename and Remove */
+        align-items: baseline;
         justify-content: space-between;
         gap: 1rem;
-        padding: 6px 0; /* even spacing around each row */
+        padding: 6px 0;
       }
       .app-file-row__left {
         display: flex;
@@ -66,11 +66,7 @@
         align-items: baseline;
       }
       .app-file-row__name { word-break: break-word; }
-
-      /* Per-row divider spacing */
-      .app-file-divider {
-        margin: 6px 0 0 0; /* tight top margin, no bottom margin */
-      }
+      .app-file-divider { margin: 6px 0 0 0; }
     </style>
 
     <script>
@@ -109,7 +105,7 @@
           return (i === 0 ? bytes : value.toFixed(dp)) + ' ' + units[i];
         }
 
-        // Render one uploaded file row: bold GOV.UK link + size + Remove
+        // Render one uploaded file row: bold text (NO LINK) + size + Remove
         function renderFileRow(file) {
           var fileName = file?.name ?? String(file);
           var fileSize = (typeof file?.size === 'number') ? formatBytes(file.size) : '';
@@ -120,36 +116,27 @@
           var left = document.createElement('div');
           left.className = 'app-file-row__left';
 
-          var nameLink = document.createElement('a');
-          // create a unique object URL so visited state works correctly
-          var blobUrl = URL.createObjectURL(file);
-          nameLink.href = blobUrl;
-          nameLink.target = '_blank';
-          nameLink.rel = 'noopener';
-          nameLink.className = 'govuk-link govuk-body govuk-!-font-weight-bold app-file-row__name';
-          nameLink.textContent = fileName;
+          // Filename as plain text (no anchor)
+          var nameEl = document.createElement('span');
+          nameEl.className = 'govuk-body govuk-! app-file-row__name';
+          nameEl.textContent = fileName;
 
           var sizeEl = document.createElement('span');
           sizeEl.className = 'govuk-body';
           sizeEl.textContent = fileSize ? ' (' + fileSize + ')' : '';
 
-          left.appendChild(nameLink);
+          left.appendChild(nameEl);
           left.appendChild(sizeEl);
 
           var remove = document.createElement('a');
           remove.href = '#';
-          remove.className = 'govuk-link govuk-link--no-visited-state govuk-body'; // action link stays blue
+          remove.className = 'govuk-link govuk-link--no-visited-state govuk-body';
           remove.textContent = 'Remove';
           remove.setAttribute('aria-label', 'Remove ' + fileName);
           remove.addEventListener('click', function (e) {
             e.preventDefault();
-            // Remove the divider directly under this row, then the row
             var dividerEl = row.nextElementSibling;
             if (dividerEl && dividerEl.classList.contains('govuk-section-break')) dividerEl.remove();
-
-            // Revoke the object URL to free memory
-            try { URL.revokeObjectURL(blobUrl); } catch (err) {}
-
             row.remove();
             fileCount = Math.max(0, fileCount - 1);
             if (live) live.textContent = fileName + ' removed.';
@@ -159,10 +146,8 @@
           row.appendChild(left);
           row.appendChild(remove);
 
-          // Place the row once
           list.prepend(row);
 
-          // Add a grey divider immediately under this row
           var perRowDivider = document.createElement('hr');
           perRowDivider.className = 'govuk-section-break govuk-section-break--visible app-file-divider';
           list.insertBefore(perRowDivider, row.nextSibling);
@@ -205,7 +190,6 @@
           });
         }
 
-        // Ensure hidden on load
         hideMeta();
       })();
     </script>
@@ -220,6 +204,7 @@
 </div>
 
 {% endblock %}
+
 
 
 

@@ -4,12 +4,6 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
 
 {% block content %}
 
@@ -30,7 +24,9 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
-              Completed
+              <strong class="govuk-tag govuk-tag--blue">
+                Completed
+              </strong>
             </div>
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -40,8 +36,8 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--light-blue">
-                In progress
+              <strong class="govuk-tag govuk-tag--grey">
+                Not yet started
               </strong>
             </div>
           </li>
@@ -52,7 +48,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -64,7 +60,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -76,7 +72,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -88,7 +84,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -100,7 +96,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -112,7 +108,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -124,7 +120,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -140,7 +136,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-1-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
@@ -152,7 +148,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+              <strong class="govuk-tag govuk-tag--grey">
                 Not yet started
               </strong>
             </div>
