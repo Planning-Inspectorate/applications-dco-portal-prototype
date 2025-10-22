@@ -49,9 +49,6 @@
             Sign-in
           </label>
         </h1>
-        <p class="govuk-body">
-        Enter your email address and application reference number. If we recognise these details, we will send you a code.
-        </p>
     
         <div class="govuk-form-group govuk-form-group--error">
         <form action="/form-handler" method="post" novalidate>
@@ -70,7 +67,7 @@
               Application reference number
             </label>
             <div id="passport-number-hint" class="govuk-hint">
-              You can find this in the email inviting you to sign in to this service. For example, ENXXXXXX.
+              You can find this in the email inviting you to sign in to this service. For example, EN012345.
             </div>
             <p id="email-address-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Error message
@@ -79,24 +76,6 @@
         </div>
         </form>
         
-        <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Can't find your reference number?
-                </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p class="govuk-body">
-                    You can contact our customer support team.
-                </p>
-                <p class="govuk-body">
-                    
-                    Telephone: 0303 444 5000 <br>
-                    Monday to Friday, 9am to midday (except public holidays) <br>
-                    <a href="https://www.gov.uk/call-charges">Find out about call charges.</a>
-                </p>
-                </div>
-        </details>
         <form class="form" action="/enter-code" method="post">
             <div class="govuk-form-group">
                 {{ govukButton({
