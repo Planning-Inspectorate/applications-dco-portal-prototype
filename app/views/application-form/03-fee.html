@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">About the applicant (Question X of X)</span>
+      <h1 class="govuk-heading-l">Tell us about your application fee payment</h1>
+
+      <form method="post" novalidate>
+        <!-- 1) How paid -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="payment-method-legend">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" id="payment-method-legend">
+              Select how you paid the application fee
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <!-- BACS -->
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="payment-method-bacs"
+                  name="paymentMethod"
+                  type="radio"
+                  value="BACS"
+                  aria-describedby="payment-method-bacs-hint">
+                <label class="govuk-label govuk-radios__label" for="payment-method-bacs">
+                  BACS
+                </label>
+                <div id="payment-method-bacs-hint" class="govuk-hint govuk-radios__hint">
+                  Hint text about BACS
+                </div>
+              </div>
+
+              <!-- CHAPS -->
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="payment-method-chaps"
+                  name="paymentMethod"
+                  type="radio"
+                  value="CHAPS"
+                  aria-describedby="payment-method-chaps-hint">
+                <label class="govuk-label govuk-radios__label" for="payment-method-chaps">
+                  CHAPS
+                </label>
+                <div id="payment-method-chaps-hint" class="govuk-hint govuk-radios__hint">
+                  Hint text about CHAPS
+                </div>
+              </div>
+
+              <!-- Cheque -->
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="payment-method-cheque"
+                  name="paymentMethod"
+                  type="radio"
+                  value="Cheque"
+                  aria-describedby="payment-method-cheque-hint">
+                <label class="govuk-label govuk-radios__label" for="payment-method-cheque">
+                  Cheque
+                </label>
+                <!-- <div id="payment-method-cheque-hint" class="govuk-hint govuk-radios__hint">
+                  If you posted a cheque to the Planning Inspectorate.
+                </div> -->
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- 2) Payment reference -->
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="payment-reference">
+            Enter the payment reference
+          </label>
+          <div id="payment-reference-hint" class="govuk-hint">
+            Hint text about payment reference
+          </div>
+          <input
+            class="govuk-input govuk-!-width-two-thirds"
+            id="payment-reference"
+            name="paymentReference"
+            type="text"
+            aria-describedby="payment-reference-hint"
+            spellcheck="false">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
