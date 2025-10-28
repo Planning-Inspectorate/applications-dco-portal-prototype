@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About the proposed development</span>
+        <h1 class="govuk-heading-l">Enter grid references</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Easting
+          </label>
+          <div id="passport-number-hint" class="govuk-hint">
+            For example, 345678
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Northing
+          </label>
+          <div id="passport-number-hint" class="govuk-hint">
+            For example, 123456
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <form class="form" action="02b-agent-contact-name" method="post">
+            <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Return home
+          </button>
+        </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}

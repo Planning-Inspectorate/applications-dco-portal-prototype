@@ -15,22 +15,22 @@
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Applicant and agent details</span>
-      <h1 class="govuk-heading-l">
-        Enter the applicant’s address
-      </h1>
 
-      <form class="form" action="01d-applicant-email-address" method="post">
-
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="applicant.firstName">
-            Postcode
+      <span class="govuk-caption-l">About the proposed development</span>
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Explain why the project requires development consent
           </label>
-        <input class="govuk-input govuk-!-width-one-third" id="applicant.firstName" name="applicant.firstName" type="text">
+        </h1>
+        <div id="more-detail-hint" class="govuk-hint">
+          Guidance on this question, e.g. explain why the Planning Inspectorate should receive the application under the Planning Act 2008
         </div>
-
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+      <form class="form" action="06b-site" method="post">
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
@@ -39,11 +39,9 @@
             Return home
           </button>
         </div>
-
       </form>
 
     </div>
   </div>
-
 
 {% endblock %}
