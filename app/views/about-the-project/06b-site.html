@@ -21,14 +21,14 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">About the proposed development</span>
+            <span class="govuk-caption-l">About the project</span>
             <h1 class="govuk-fieldset__heading">
-                Select whether the site is single or linear
+                Is the site single or linear?
             </h1>
             </legend>
-            <div id="more-detail-hint" class="govuk-hint">
+            <!-- <div id="more-detail-hint" class="govuk-hint">
               Guidance on this question (explanation of single and linear)
-            </div>
+            </div> -->
             <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -36,22 +36,28 @@
                 Single
                 </label>
             </div>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              What single means
+            </div>
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                 Linear
                 </label>
             </div>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              What linear means
+            </div>
         </fieldset>
         </div>
         <form class="form" action="06cii-linear-grid-reference" method="post">
             <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
+            Save and continue
           </button>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Return home
-          </button>
+          </button> -->
         </div>
         </form>
 

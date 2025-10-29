@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">Applicant and agent details</span>
+      <h1 class="govuk-heading-l">
+        Enter the applicant’s address
+      </h1>
+
+      <form method="post" action="" novalidate="novalidate" class="pins-applications-create">
+
+      <input type="hidden" name="currentFormStage" value="selectAddress">
+			<input type="hidden" name="postcode" value="HA8 8RW">
+			<div class="govuk-form-group">
+				<p class="govuk-label">
+					Postcode
+				</p>
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-one-third">
+						<div class="govuk-grid-row govuk-button-group">
+							<p class="govuk-heading-s govuk-grid-column-one-half">HA8 8RW</p>
+							<div class="govuk-grid-column-one-half">
+								<a class="govuk-link " href="?">Change</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="apiReference">
+					Address
+				</label>
+				<select class="govuk-select govuk-!-width-one-third" id="apiReference" name="apiReference">
+					<option value="-1">26 addresses found</option>
+						<option value="200017517_10561868">2, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017519_10561880">4, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017521_10561887">6, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017523_10561888">8, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017525_10561863">10, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017527_10561864">12, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017529_10561865">14, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017531_10561866">16, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017533_10561867">18, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017535_10561869">20, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017537_10561870">22, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017539_10561872">24, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017541_10561873">26, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017543_10561874">28, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017545_10561875">30, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017547_10561876">32, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017549_10561877">34, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017551_10561878">36, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017553_10561879">38, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017555_10561881">40, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017557_10561882">42, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017559_10561883">44, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017561_10561884">46, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017563_10561885">48, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017565_10561886">50, Bullescroft Road, Edgware, HA8 8RW</option>
+						<option value="200017515_10561871">22a, Bullescroft Road, Edgware, HA8 8RW</option>
+				</select>
+			</div>
+			<div class="govuk-button-group">
+				<a class="govuk-link" href="?postcode=HA8 8RW">I can't find the address on the list</a>
+			</div>
+
+
+
+		<div class="govuk-grid-row">
+			<div class="govuk-button-group govuk-grid-column-one-half">
+						<button type="submit" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">
+  Save and continue
+</button>
+			</div>
+		</div>
+	</form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

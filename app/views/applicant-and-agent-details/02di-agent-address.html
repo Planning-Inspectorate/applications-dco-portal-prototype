@@ -19,28 +19,30 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Applicant and agent details</span>
       <h1 class="govuk-heading-l">
-        Enter the applicant's organisation
+        Enter your address
       </h1>
 
-      <form class="form" action="01b-applicant-name" method="post">
+      <form class="form" action="02cii-agent-email-address" method="post">
 
         <div class="govuk-form-group">
-          <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="eventName" type="text">
+          <label class="govuk-label govuk-label--s" for="applicant.firstName">
+            Postcode
+          </label>
+        <input class="govuk-input govuk-!-width-one-third" id="applicant.firstName" name="applicant.firstName" type="text">
         </div>
 
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
+            Save and continue
           </button>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Return home
-          </button>
+          </button> -->
         </div>
       </form>
 
     </div>
   </div>
-
 
 
 {% endblock %}
