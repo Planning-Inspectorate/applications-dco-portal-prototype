@@ -23,45 +23,61 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <span class="govuk-caption-l">Task 3</span>
           <h1 class="govuk-fieldset__heading">
-            Is there an associated development in this project?
+            Select the documents that relate to the associated development
           </h1>
         </legend>
 
-        <div class="govuk-radios">
-          <!-- YES option -->
-          <div class="govuk-radios__item">
-            <input
-              class="govuk-radios__input"
-              id="associated-development-yes"
-              name="associated-development"
-              type="radio"
-              value="yes"
-            >
-            <label class="govuk-label govuk-radios__label" for="associated-development-yes">
-              Yes
-            </label>
-          </div>
-
-          <!-- NO option -->
-          <div class="govuk-radios__item">
-            <input
-              class="govuk-radios__input"
-              id="associated-development-no"
-              name="associated-development"
-              type="radio"
-              value="no"
-            >
-            <label class="govuk-label govuk-radios__label" for="associated-development-no">
-              No
-            </label>
-          </div>
-        </div>
 
         <!-- CHECKBOXES (always visible) -->
-        <!-- <div class="govuk-form-group govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m">Select the documents that relate to the associated development</h2>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Draft development consent order</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
 
-          <h3 class="govuk-heading-s">Draft development consent order</h2>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 2
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Explanatory memorandum</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Planning statement</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 2
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Details of associated development, with references to documents</h2>
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
@@ -78,8 +94,8 @@
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
-              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
                 Document title 3
               </label>
             </div>
@@ -90,50 +106,8 @@
                 Document title 4
               </label>
             </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
-              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
-                Document title 5
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
-              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
-                Document title 6
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
-              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
-                Document title 7
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
-              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
-                Document title 8
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
-              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
-                Document title 9
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
-              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
-                Document title 10
-              </label>
-            </div>
           </div>
-        </div> -->
+        </div>
 
 
       </fieldset>
