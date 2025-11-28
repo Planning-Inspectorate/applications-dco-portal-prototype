@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="manage-users-new-user" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+            Confirm that you want to add this user
+        </h1>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email address</dt>
+            <dd class="govuk-summary-list__value">user4@email.com</dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">Change<span class="govuk-visually-hidden"> email address</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Access level</dt>
+            <dd class="govuk-summary-list__value">Standard user</dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">Change<span class="govuk-visually-hidden"> access level</span></a>
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+
+      <div class="govuk-form-group">
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </div>
+
+      </form>
+    </div>
+</div>
+
+    
+{% endblock %}
