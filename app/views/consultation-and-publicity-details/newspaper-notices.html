@@ -16,15 +16,18 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/form-handler" method="post" novalidate>
+        <form action="check-your-answers" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">Consultation and publicity details</span>
                 <h1 class="govuk-fieldset__heading">
-                  Select the Explanatory Memorandum
+                  Which documents relate to newspaper notices?
                 </h1>
-          
               </legend>
+              <div id="event-name-hint" class="govuk-hint">
+                  Hint text about this question
+                </div>
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -62,4 +65,3 @@
 </script>
 
 {% endblock %}
-

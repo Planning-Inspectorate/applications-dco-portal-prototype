@@ -6,17 +6,41 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
+  
 <span class="govuk-caption-l">Your documents</span>
 <h1 class="govuk-heading-l">Application form related information</h1>
+
+<div class="govuk-inset-text govuk-inset-text--error" role="alert" aria-live="assertive">
+
+  <p><strong>The following documents have been removed</strong></p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>ApplicationCoverLetter3.pdf</li>
+    <li>DocumentTitle1.pdf</li>
+    <li>DocumentTitle2.pdf</li>
+  </ul>
+
+  <p>
+    We detected a virus in these documents. For your safety, they have been automatically removed from your uploads.
+  </p>
+
+  <button type="button" class="govuk-button govuk-button--secondary">
+    Dismiss
+  </button>
+
+</div>
+
+
+
 
 <table class="govuk-table govuk-table--small-text-until-tablet">
   <caption class="govuk-table__caption govuk-table__caption--m">Documents uploaded</caption>
@@ -27,6 +51,7 @@
       <th scope="col" class="govuk-table__header">APFP regulation</th>
       <th scope="col" class="govuk-table__header">Certification</th>
       <th scope="col" class="govuk-table__header">Date uploaded</th>
+      <!-- <th scope="col" class="govuk-table__header">Virus check status</th> -->
       <th scope="col" class="govuk-table__header">Remove</th>
     </tr>
   </thead>
@@ -40,7 +65,13 @@
       <td class="govuk-table__cell">Application Cover Letter</td>
       <td class="govuk-table__cell">5(2)(b)</td>
       <td class="govuk-table__cell">Certified</td>
-      <td class="govuk-table__cell">13/10/2025 11:30</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">Scanning for viruses</strong>
+      </td>
+      <!-- <td class="govuk-table__cell">13/10/2025 11:30</td> -->
+      <!-- <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow"><b>Scanning for viruses</b></strong>
+      </td> -->
       <td class="govuk-table__cell">
         <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> ApplicationCoverLetter1.pdf</span></a>
       </td>
@@ -56,27 +87,36 @@
       <td class="govuk-table__cell">5(2)(b)</td>
       <td class="govuk-table__cell">Certified</td>
       <td class="govuk-table__cell">13/10/2025 11:30</td>
+      <!-- <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green"><b>Passed</b></strong>
+      </td> -->
       <td class="govuk-table__cell">
         <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> ApplicationCoverLetter2.pdf</span></a>
       </td>
     </tr>
 
-    <tr class="govuk-table__row">
+    <!-- <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <a class="govuk-link" href="/uploads/ApplicationCoverLetter3.pdf" target="_blank" rel="noopener">
-          ApplicationCoverLetter3.pdf
-        </a>
+        <span class="govuk-body">ApplicationCoverLetter3.pdf</span>
       </th>
       <td class="govuk-table__cell">Application Cover Letter</td>
       <td class="govuk-table__cell">5(2)(b)</td>
       <td class="govuk-table__cell">Certified</td>
-      <td class="govuk-table__cell">13/10/2025 11:30</td>
       <td class="govuk-table__cell">
-        <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> ApplicationCoverLetter3.pdf</span></a>
+        <strong class="govuk-tag govuk-tag--red">
+          Virus detected 
+        </strong>
       </td>
-    </tr>
+      <td class="govuk-table__cell">
+        <span>Removed automatically</span>
+      </td>
+    </tr> -->
+
+
   </tbody>
 </table>
+
+
 
 <form class="form" action="/document-category/upload-documents" method="post">
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -113,3 +153,4 @@
 </form>
 
 {% endblock %}
+

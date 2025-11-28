@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+            <span class="govuk-caption-l">Draft order and explanatory memorandum</span>
+            <h1 class="govuk-heading-l">Check your answers</h1>
+            <!-- <h2 class="govuk-heading-m">Personal details</h2> -->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Associated development
+                </dt>
+                <dd class="govuk-summary-list__value">
+                Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Associated development documents
+                </dt>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Document-title1.pdf</li>
+                    <li>Document-title2.pdf</li>
+                    <li>Document-title3.pdf</li>
+                </ul>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Draft Development Consent Order documents
+                </dt>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Document-title1.pdf</li>
+                    <li>Document-title2.pdf</li>
+                </ul>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Explanatory memorandum documents
+                </dt>
+                <dd class="govuk-summary-list__value">
+                Document-title1.pdf
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                </dd>
+            </div>
+            </dl>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Have you completed this section?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+                    Yes, I’ve completed this section
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+                    No, I’ll come back to it later
+                    </label>
+                </div>
+                </div>
+            </fieldset>
+            </div>
+
+            <form class="form" action="/document-category/with-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Save and continue"
+                }) }}
+            </div>
+            </form>
+        </div>
+        </div>
+    </main>
+    </div>    
+    </div>
+</div>
+
+{% endblock %}

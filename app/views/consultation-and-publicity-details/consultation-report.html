@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="newspaper-notices" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">Consultation and publicity details</span>
+                <h1 class="govuk-fieldset__heading">
+                  Which documents relate to the consultation report?
+                </h1>
+              </legend>
+              <div id="event-name-hint" class="govuk-hint">
+                Hint text about this question
+              </div>
+              <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Consultation report</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Consultation report appendices</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 2
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 3
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 4
+              </label>
+            </div>
+          </div>
+        </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Initialise all GOV.UK Frontend components (includes radios + conditional reveal)
+  window.GOVUKFrontend.initAll()
+</script>
+
+{% endblock %}

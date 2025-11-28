@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/task-3/draft-dco" method="post">
+
+      <fieldset class="govuk-fieldset" aria-describedby="associated-development-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Draft order and explanatory memorandum</span>
+          <h1 class="govuk-fieldset__heading">
+            Which documents relate to the associated developments?
+          </h1>
+        </legend>
+        <div id="event-name-hint" class="govuk-hint">
+          Hint text about this question
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            No documents have been uploaded. Upload documents first to select them.
+          </strong>
+        </div>
+
+
+      </fieldset>
+
+      <div class="govuk-form-group govuk-!">
+        {{ govukButton({
+            text: "Return home"
+        }) }}
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+  // Initialise all GOV.UK Frontend components (radios, checkboxes, etc.)
+  window.GOVUKFrontend.initAll()
+</script>
+
+{% endblock %}
+
+

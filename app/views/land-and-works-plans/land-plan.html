@@ -17,20 +17,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/task-3/draft-dco" method="post">
+    <form class="form" action="works-plan" method="post">
 
       <fieldset class="govuk-fieldset" aria-describedby="associated-development-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <span class="govuk-caption-l">Task 3</span>
+          <span class="govuk-caption-l">Land and works plans</span>
           <h1 class="govuk-fieldset__heading">
-            Select the documents that relate to the associated development
+            Which documents relate to the Land Plan?
           </h1>
         </legend>
+        <div id="event-name-hint" class="govuk-hint">
+          Hint text about this question
+        </div>
 
 
         <!-- CHECKBOXES (always visible) -->
         <div class="govuk-form-group govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m">Draft development consent order</h2>
+          <h2 class="govuk-heading-m">Land plans</h2>
+          
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
@@ -48,7 +52,7 @@
           </div>
         </div>
         <div class="govuk-form-group govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m">Explanatory memorandum</h2>
+          <h2 class="govuk-heading-m">Crown land</h2>
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
@@ -59,7 +63,7 @@
           </div>
         </div>
         <div class="govuk-form-group govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m">Planning statement</h2>
+          <h2 class="govuk-heading-m">Other detailed plans</h2>
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
@@ -77,7 +81,7 @@
           </div>
         </div>
         <div class="govuk-form-group govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m">Details of associated development, with references to documents</h2>
+          <h2 class="govuk-heading-m">Drainage and/or surface water management</h2>
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
@@ -112,7 +116,7 @@
 
       </fieldset>
 
-      <div class="govuk-form-group govuk-!-margin-top-6">
+      <div class="govuk-form-group govuk-!">
         {{ govukButton({
             text: "Continue"
         }) }}
@@ -128,5 +132,3 @@
 </script>
 
 {% endblock %}
-
-
