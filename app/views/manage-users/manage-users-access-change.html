@@ -25,22 +25,22 @@
             </div>
             <div class="govuk-notification-banner__content">
                 <h3 class="govuk-notification-banner__heading">
-                user4@email.com is now an application manager 
+                user4@email.com is now an admin
                 </h3>
-                <p class="govuk-body">They will be able to add and remove other users of this application.</p>
+                <p class="govuk-body">They can now manage user access on this project.</p>
             </div>
-            </div>
+        </div>
         <h1 class="govuk-heading-l">Manage users of this application</h1>
         <p class="govuk-body">
-            As an application manager, you can:
+            As an admin, you can:
         </p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>Add a new user to this application</li>
-            <li>Remove a user from this application</li>
+            <li>Add a new user to this project</li>
+            <li>Remove a user from this project</li>
             <li>Change a user's access level</li>
         </ul>
         <p class="govuk-body">
-            There can only be up to 3 application managers at any time.
+            There can only be up to 3 admins at any time.
         </p>
         
         <p class="govuk-body">
@@ -56,12 +56,16 @@
                 <th scope="col" class="govuk-table__header">User</th>
                 <th scope="col" class="govuk-table__header">Access level</th>
                 <th scope="col" class="govuk-table__header">Edit</th>
+                <th scope="col" class="govuk-table__header">Remove</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">user1@email.com</th>
-                <td class="govuk-table__cell">Application manager</td>
+                <td class="govuk-table__cell">Admin</td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> user1@email.com</span></a>
+                </td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> user1@email.com</span></a>
                 </td>
@@ -69,25 +73,34 @@
 
                 <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">user2@email.co.uk</th>
-                <td class="govuk-table__cell">Application manager</td>
+                <td class="govuk-table__cell">Admin</td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> user2@email.com</span></a>
+                </td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> user2@email.com</span></a>
                 </td>
                 </tr>
 
                 <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">user3@email.co.uk</th>
-                <td class="govuk-table__cell">Standard user</td>
+                <td class="govuk-table__cell">Standard</td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> user3@email.com</span></a>
+                </td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> user2@email.com</span></a>
                 </td>
                 </tr>
 
                 <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">user4@email.co.uk</th>
-                <td class="govuk-table__cell">Application manager</td>
+                <td class="govuk-table__cell">Admin</td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link" href="change-access-level">Edit<span class="govuk-visually-hidden"> user3@email.com</span></a>
+                </td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link" href="confirm-remove-user">Remove<span class="govuk-visually-hidden"> user2@email.com</span></a>
                 </td>
                 </tr>
             </tbody>
