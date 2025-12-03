@@ -14,21 +14,20 @@
 {% block content %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-<div class="govuk-grid-row">
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="report-to-inform-appropriate-assessment" method="post" novalidate>
+        <form action="changes-to-access-or-public-rights-of-way" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Habitat Regulations Assessment information</span>
+                <span class="govuk-caption-l">Other consents or licences details</span>
                 <h1 class="govuk-fieldset__heading">
-                  Which documents relate to the European or Ramsar sites?
+                  Which documents identify the other consents or licences?
                 </h1>
               </legend>
-                <div id="event-name-hint" class="govuk-hint">
-                  Select all that apply
+              <div id="event-name-hint" class="govuk-hint">
+                  If there are any reasons why you might not be granted consent, then you should include this within your documentation and reference any authorising bodies' responses
                 </div>
-              
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -60,10 +59,10 @@
   </div>
 </div>
 
-
 <script>
-  // Initialise all GOV.UK Frontend components (radios, checkboxes, etc.)
+  // Initialise all GOV.UK Frontend components (includes radios + conditional reveal)
   window.GOVUKFrontend.initAll()
 </script>
 
 {% endblock %}
+

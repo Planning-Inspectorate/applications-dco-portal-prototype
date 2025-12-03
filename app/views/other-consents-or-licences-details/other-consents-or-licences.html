@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="list-of-other-consents-or-licences" method="post">
+
+      <fieldset class="govuk-fieldset" aria-describedby="associated-development-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Other consents or licences details</span>
+          <h1 class="govuk-fieldset__heading">
+            Does the project require other consents or licences?
+          </h1>
+        </legend>
+        <div id="event-name-hint" class="govuk-hint">
+                  These will not be under the authorisation of the Secretary of State and may be needed for the project to be constructed or operated, for example, controlling pollution
+                </div>
+        <div class="govuk-radios">
+          <!-- YES option -->
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="associated-development-yes"
+              name="associated-development"
+              type="radio"
+              value="yes"
+            >
+            <label class="govuk-label govuk-radios__label" for="associated-development-yes">
+              Yes
+            </label>
+          </div>
+
+          <!-- NO option -->
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="associated-development-no"
+              name="associated-development"
+              type="radio"
+              value="no"
+            >
+            <label class="govuk-label govuk-radios__label" for="associated-development-no">
+              No
+            </label>
+          </div>
+        </div>
+
+        <!-- CHECKBOXES (always visible) -->
+        <!-- <div class="govuk-form-group govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Select the documents that relate to the associated development</h2>
+
+          <h3 class="govuk-heading-s">Draft development consent order</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 1
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 2
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 3
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 4
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 5
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 6
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 7
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 8
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dev-plan" name="associated-documents" type="checkbox" value="development-plan">
+              <label class="govuk-label govuk-checkboxes__label" for="dev-plan">
+                Document title 9
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="impact-statement" name="associated-documents" type="checkbox" value="impact-statement">
+              <label class="govuk-label govuk-checkboxes__label" for="impact-statement">
+                Document title 10
+              </label>
+            </div>
+          </div>
+        </div> -->
+
+
+      </fieldset>
+
+      <div class="govuk-form-group govuk-!-margin-top-6">
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+  // Initialise all GOV.UK Frontend components (radios, checkboxes, etc.)
+  window.GOVUKFrontend.initAll()
+</script>
+
+{% endblock %}
+
+
