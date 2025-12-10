@@ -12,6 +12,7 @@
 @import "PINS-header--internal";    // this imports the styles for the planning inspectorate header
                                     // the styles are in the sass folder (the same folder)
 
-.govuk-inset-text--error {
-  border-left: 8px solid #d4351c; // GOV.UK error red
-}
+
+// .govuk-link:visited {
+//   color: govuk-colour("blue"); // Same as unvisited
+// }
