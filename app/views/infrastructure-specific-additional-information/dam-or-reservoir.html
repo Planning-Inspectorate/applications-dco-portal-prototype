@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-caption-l">Infrastructure-specific additional information</div>
+    <h1 class="govuk-heading-xl">Dam or reservoir</h1>
+
+    <form method="post" action="dam-or-reservoir-documents">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--m" for="cableRoute">
+          Will the project include any recreational amenities?
+        </label>
+        <textarea class="govuk-textarea" id="cableRoute" name="cableRoute" rows="5"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--m" for="safetyZones">
+          Describe these recreational amenities
+        </label>
+        <textarea class="govuk-textarea" id="safetyZones" name="safetyZones" rows="5"></textarea>
+      </div>
+
+      <button class="govuk-button govuk-button--start" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
