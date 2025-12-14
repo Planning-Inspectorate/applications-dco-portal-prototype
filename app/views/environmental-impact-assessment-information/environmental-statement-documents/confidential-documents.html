@@ -16,18 +16,19 @@
 
     <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="sensitive-information" method="post" novalidate>
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Environmental impact assessment information</span>
-            <h1 class="govuk-fieldset__heading">
-              Which documents make up the environmental statement?
-            </h1>
-          </legend>
-          <div id="event-name-hint" class="govuk-hint">
-            You uploaded these documents to 'confidential information'
-          </div>
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Environmental impact assessment information</span>
+          Confidential documents
+        </h1>
+        <!-- <p class="govuk-body">
+        Your environmental statement must include a non-technical summary. 
+        </p> -->
+        <form action="sensitive-information" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Which documents form part of the environmental statement?
+              </legend>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="document-1" name="documents[]" type="checkbox" value="carcasses">

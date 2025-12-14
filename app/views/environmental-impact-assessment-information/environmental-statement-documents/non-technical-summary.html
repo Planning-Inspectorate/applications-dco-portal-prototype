@@ -15,35 +15,54 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Environmental impact assessment information</span>
+          Non-technical summary
+        </h1>
+        <p class="govuk-body">
+        Your environmental statement must include a non-technical summary. 
+        </p>
         <form action="model-information" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Environmental impact assessment information</span>
-                <h1 class="govuk-fieldset__heading">
-                  Which documents make up the environmental statement?
-                </h1>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Which documents form part of the environmental statement?
               </legend>
-              <div id="event-name-hint" class="govuk-hint">
-                Your environmental statement must include a 'non-technical summary'
-              </div>
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste">
-                    Document title 1
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                    Document title 2
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="document-1" name="documents[]" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="document-1">
+                Document title 1
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="document-2" name="documents[]" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="document-2">
+                Document title 2
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="document-3" name="documents[]" type="checkbox" value="farm1">
+              <label class="govuk-label govuk-checkboxes__label" for="document-3">
+                Document title 3
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="document-4" name="documents[]" type="checkbox" value="farm2">
+              <label class="govuk-label govuk-checkboxes__label" for="document-4">
+                Document title 4
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="document-5" name="documents[]" type="checkbox" value="farm3">
+              <label class="govuk-label govuk-checkboxes__label" for="document-5">
+                Document title 5
+              </label>
+            </div>
           </div>
+        </fieldset>
+      </div>
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>

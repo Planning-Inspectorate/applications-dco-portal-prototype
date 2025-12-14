@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-caption-l">Infrastructure-specific additional information</div>
+    <h1 class="govuk-heading-xl">Highway related development</h1>
+    <p class="govuk-body">Enter the dimensions or levels of the project for each of the following items.</p>
+
+
+    <form method="post" action="highway-related-development-documents">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="groundLevels">
+          What are the ground levels?
+        </label>
+        <input class="govuk-input" id="groundLevels" name="groundLevels" type="text">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="structureHeights">
+          What is the height of every bridge, viaduct, aqueduct, embankment and elevated guide way?
+        </label>
+        <textarea class="govuk-textarea" id="structureHeights" name="structureHeights" rows="5"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="cuttingsDepth">
+          What is the depth of every cutting and tunnel?
+        </label>
+        <textarea class="govuk-textarea" id="cuttingsDepth" name="cuttingsDepth" rows="5"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="waterBedLevels">
+          What are the levels of the bed of relevant tidal waters or inland waterway?
+        </label>
+        <textarea class="govuk-textarea" id="waterBedLevels" name="waterBedLevels" rows="5"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="structureDevices">
+          What is the height of every structure or device on, above, or below the surface?
+        </label>
+        <textarea class="govuk-textarea" id="structureDevices" name="structureDevices" rows="5"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--s" for="drainageOutfalls">
+          What are the drainage outfall details for highways?
+        </label>
+        <textarea class="govuk-textarea" id="drainageOutfalls" name="drainageOutfalls" rows="5"></textarea>
+      </div>
+
+      <button class="govuk-button govuk-button--start" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

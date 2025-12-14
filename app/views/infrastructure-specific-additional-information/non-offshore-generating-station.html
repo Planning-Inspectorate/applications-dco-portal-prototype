@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-caption-l">Infrastructure-specific additional information</div>
+    <h1 class="govuk-heading-xl">Non offshore generating station</h1>
+
+    <form method="post" action="non-offshore-generating-station-documents">
+
+      <!-- First text area question -->
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label govuk-label--m" for="gridConnection">
+          Who will design and build the connection to the electricity grid?
+        </label>
+        <textarea class="govuk-textarea" id="gridConnection" name="gridConnection" rows="5"></textarea>
+      </div>
+
+      <!-- Radio button question with conditional reveal -->
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <fieldset class="govuk-fieldset" aria-describedby="gasFuelledHint">
+          <legend class="govuk-fieldset__legend">
+            <span class="govuk-heading-m">Is it a gas fuelled generating station?</span>
+          </legend>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <!-- Yes option -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gasYes" name="gasFuelled" type="radio" value="yes" aria-controls="gasPipeline">
+              <label class="govuk-label govuk-radios__label" for="gasYes">Yes</label>
+
+              <div id="gasPipeline" class="govuk-radios__conditional">
+                <div class="govuk-form-group govuk-!-margin-top-2">
+                  <label class="govuk-label govuk-label--s" for="gasPipelineConnection">
+                    Who will design and build the gas pipeline connection to the generating station?
+                  </label>
+                  <textarea class="govuk-textarea" id="gasPipelineConnection" name="gasPipelineConnection" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- No option -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gasNo" name="gasFuelled" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="gasNo">No</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Continue button -->
+      <button class="govuk-button govuk-button--start" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
