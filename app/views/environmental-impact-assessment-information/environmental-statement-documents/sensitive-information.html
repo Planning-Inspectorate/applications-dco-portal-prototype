@@ -20,15 +20,15 @@
       <span class="govuk-caption-l">Environmental impact assessment information</span>
           Sensitive information
         </h1>
-        <!-- <p class="govuk-body">
-        Your environmental statement must include a non-technical summary. 
-        </p> -->
         <form action="../screening-opinion-or-direction" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Which documents form part of the environmental statement?
               </legend>
+              <div id="event-name-hint" class="govuk-hint">
+                  Select all that apply
+                </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="document-1" name="documents[]" type="checkbox" value="carcasses">
