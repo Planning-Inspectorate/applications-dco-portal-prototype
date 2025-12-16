@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Pipeline additional information</span>
+        <h1 class="govuk-heading-l">Enter pipeline details</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Name
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Owner
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Start point
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            End point
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            Length (in kilometres)
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="passport-number">
+            External diameter (in mm)
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+        </div>
+        <form class="form" action="convey" method="post">
+            <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
