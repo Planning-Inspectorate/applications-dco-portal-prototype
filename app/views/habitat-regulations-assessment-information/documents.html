@@ -14,17 +14,36 @@
 {% block content %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="../railway/ground-levels" method="post" novalidate>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Habitat Regulations Assessment information</span>
+        <h1 class="govuk-heading-l">
+          Habitat Regulations Assessment (HRA) documents
+        </h1>
+        <p class="govuk-body">
+        This could include:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>
+            a short statement saying the development won’t affect any European or Ramsar sites
+        </li>
+        <li>
+            a No Significant Effects Report (NSER), if screening shows it’s very unlikely to have any significant effects on these sites
+        </li>
+        <li>
+            an HRA Report, if screening shows it might have significant effects
+        </li>
+        </ul>
+        <p class="govuk-body">
+        The HRA Report should also include information for the derogation tests, if needed.
+        </p>
+        <form action="#" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Highway related development</span>
-                <h1 class="govuk-fieldset__heading">
-                  Which documents provide additional information?
-                </h1>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Which documents relate to the HRA process?
               </legend>
+        
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -53,11 +72,10 @@
         </form>
       </div>
     </div>
-  </div>
-</div>
+
 
 <script>
-  // Initialise all GOV.UK Frontend components (includes radios + conditional reveal)
+  // Initialise all GOV.UK Frontend components (radios, checkboxes, etc.)
   window.GOVUKFrontend.initAll()
 </script>
 
