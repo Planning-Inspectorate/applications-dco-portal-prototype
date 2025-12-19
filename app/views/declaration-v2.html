@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              Declaration
+            </h1>
+              <p>
+                By submitting this application, I declare that:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  to the best of my knowledge, the information given in this application and enclosed maps, plans and other documents are true
+                </li>
+                <li>
+                  I have read and agree to The Planning Inspectorate's <a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice" class="govuk-link" target="_blank" rel="noopener noreferrer">privacy notice (opens in new tab)<span class="govuk-visually-hidden"> (opens in a new tab)</span></a>
+                </li>
+              </ul>
+              
+          <form class="form" action="/confirmation" method="post">
+            {{ govukButton({
+              text: "Accept and submit"
+            }) }}
+          </form>
+      </div>
+    </div>
+
+{% endblock %}
