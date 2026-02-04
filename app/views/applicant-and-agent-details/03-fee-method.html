@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Payment details</span>
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Select how you paid the application fee
+          </h1>
+        </legend>
+        <!-- <div id="signIn-hint" class="govuk-hint">
+          You’ll need an account to prove your identity and complete your Self Assessment
+        </div> -->
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn">
+              BACS
+            </label>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              Bankers' Automated Clearing Services (BACS) is a secure, electronic bank-to-bank transfer
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn-2">
+              CHAPS
+            </label>
+            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              Clearing House Automated Payment System (CHAPS) is often used for fast transfers of large sums of money
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn-2">
+              Cheque
+            </label>
+            <!-- <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              If you don’t have a GOV.UK One Login, you can create one
+            </div> -->
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Return home
+          </button> -->
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

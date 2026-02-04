@@ -15,30 +15,29 @@
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-l">About the project</span>
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="more-detail">
-            Explain why the project requires development consent
-          </label>
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About the project</span>
+        <h1 class="govuk-heading-l">
+          Development consent
         </h1>
-        <div id="more-detail-hint" class="govuk-hint">
-          Guidance on this question, e.g. explain why the Planning Inspectorate should receive the application under the Planning Act 2008
-        </div>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-      </div>
-      <form class="form" action="06b-site" method="post">
-        <div class="govuk-button-group">
+        <p class="govuk-body">
+        You should refer to the sections in <a href="https://www.legislation.gov.uk/ukpga/2008/29/part/3" class="govuk-link" target="_blank" rel="noopener noreferrer">Part 3 of the Planning Act 2008 (opens in new tab)<span class="govuk-visually-hidden"> (opens in a new tab)</span></a>. that outline why the project needs development consent. If it’s relevant, you should describe the project’s capacity (Part 3 lists the thresholds). For harbour facilities, you should include the appropriate equation from section 24(5). 
+        </p>
+        <form action="06a-location-description" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Why does the project need development consent?
+              </legend>
+              <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </fieldset>
+          </div>
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-        </div>
-      </form>
-
+        </form>
+      </div>
     </div>
-  </div>
 
 {% endblock %}

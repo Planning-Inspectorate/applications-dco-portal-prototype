@@ -16,32 +16,31 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-l">About the project</span>
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="more-detail">
-            Describe the location or route of the project
-          </label>
+  <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About the project</span>
+        <h1 class="govuk-heading-l">
+          Location or route description
         </h1>
-        <div id="more-detail-hint" class="govuk-hint">
-          Guidance on this question (what's expected)
-        </div>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-      </div>
-
-        <div class="govuk-button-group">
+        <p class="govuk-body">
+        Describe the location or route of the project. For example, 'about 8km off the coast of Kent, in areas surrounding Thanet Offshore Wind Farm'.
+        </p>
+        <p class="govuk-body">
+        You can update this information, but you must tell the case team about any changes.
+        </p>
+        <form action="06b-site" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                How would you describe the location or route of the project?
+              </legend>
+              <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </fieldset>
+          </div>
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-          <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Return home
-          </button> -->
-        </div>
-      </form>
-
+        </form>
+      </div>
     </div>
-  </div>
 
 {% endblock %}
