@@ -15,7 +15,8 @@
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">Your documents</span>
 <h1 class="govuk-heading-l">Application form related information</h1>
 
@@ -143,11 +144,15 @@
   </button>
 </form>
 
+
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       Have you completed this section?
     </legend>
+    <div id="event-name-hint" class="govuk-hint">
+      You can only mark this section as complete when all your documents have been uploaded and you have removed any documents with a virus
+    </div>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
@@ -167,9 +172,11 @@
 
 <form class="form" action="/tasklist" method="post">
   <div class="govuk-form-group">
-    {{ govukButton({ text: "Continue" }) }}
+    {{ govukButton({ text: "Save and return" }) }}
   </div>
 </form>
+</div>
+</div>
 
 {% endblock %}
 
