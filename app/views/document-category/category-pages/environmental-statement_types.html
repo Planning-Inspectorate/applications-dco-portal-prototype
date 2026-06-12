@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{data['document-category']}}</span>
+            <h1 class="govuk-fieldset__heading">
+                Select the document type
+            </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType" name="documentType" type="radio" value="introductory-chapters" data-cy="answer-introductory-chapters">
+                <label class="govuk-label govuk-radios__label" for="documentType">
+                  Introductory chapters
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-2" name="documentType" type="radio" value="aspect-chapters" data-cy="answer-aspect-chapters">
+                <label class="govuk-label govuk-radios__label" for="documentType-2">
+                  Aspect chapters
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-3" name="documentType" type="radio" value="environmental-statement-appendices" data-cy="answer-environmental-statement-appendices">
+                <label class="govuk-label govuk-radios__label" for="documentType-3">
+                  Environmental statement appendices
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-4" name="documentType" type="radio" value="environmental-statement-figures" data-cy="answer-environmental-statement-figures">
+                <label class="govuk-label govuk-radios__label" for="documentType-4">
+                  Environmental statement figures
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-5" name="documentType" type="radio" value="non-technical-summary" data-cy="answer-non-technical-summary">
+                <label class="govuk-label govuk-radios__label" for="documentType-5">
+                  Non-technical summary
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-6" name="documentType" type="radio" value="model-information" data-cy="answer-model-information">
+                <label class="govuk-label govuk-radios__label" for="documentType-6">
+                  Model information
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-7" name="documentType" type="radio" value="any-other-media-information" data-cy="answer-any-other-media-information">
+                <label class="govuk-label govuk-radios__label" for="documentType-7">
+                  Any other media information
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-8" name="documentType" type="radio" value="confidential-documents" data-cy="answer-confidential-documents">
+                <label class="govuk-label govuk-radios__label" for="documentType-8">
+                  Confidential documents (limited use - please discuss with Planning Inspectorate case team)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-9" name="documentType" type="radio" value="screening-direction" data-cy="answer-screening-direction">
+                <label class="govuk-label govuk-radios__label" for="documentType-9">
+                  Screening direction
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-10" name="documentType" type="radio" value="scoping-opinion" data-cy="answer-scoping-opinion">
+                <label class="govuk-label govuk-radios__label" for="documentType-10">
+                  Scoping opinion
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-11" name="documentType" type="radio" value="flood-risk-assessment" data-cy="answer-flood-risk-assessment">
+                <label class="govuk-label govuk-radios__label" for="documentType-11">
+                  Flood risk assessment (FRA)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-12" name="documentType" type="radio" value="sensitive-environmental-information" data-cy="answer-sensitive-environmental-information">
+                <label class="govuk-label govuk-radios__label" for="documentType-12">
+                  Sensitive environmental information (please discuss with Planning Inspectorate case team)
+                </label>
+              </div>
+            </div>
+        </fieldset>
+        </div>
+        <form class="form" action="../upload-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{data['document-category']}}</span>
+            <h1 class="govuk-fieldset__heading">
+                Select the document type
+            </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType" name="documentType" type="radio" value="offshore-generating-station" data-cy="answer-offshore-generating-station">
+                <label class="govuk-label govuk-radios__label" for="documentType">
+                  Offshore generating station
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-2" name="documentType" type="radio" value="non-offshore-generating-station" data-cy="answer-non-offshore-generating-station">
+                <label class="govuk-label govuk-radios__label" for="documentType-2">
+                  Non offshore generating station
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-3" name="documentType" type="radio" value="highway-related-development" data-cy="answer-highway-related-development">
+                <label class="govuk-label govuk-radios__label" for="documentType-3">
+                  Highway related development
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-4" name="documentType" type="radio" value="railway-development" data-cy="answer-railway-development">
+                <label class="govuk-label govuk-radios__label" for="documentType-4">
+                  Railway development
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-5" name="documentType" type="radio" value="harbour-facilities" data-cy="answer-harbour-facilities">
+                <label class="govuk-label govuk-radios__label" for="documentType-5">
+                  Harbour facilities
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-6" name="documentType" type="radio" value="pipelines" data-cy="answer-pipelines">
+                <label class="govuk-label govuk-radios__label" for="documentType-6">
+                  Pipelines
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-7" name="documentType" type="radio" value="hazardous-waste-facility" data-cy="answer-hazardous-waste-facility">
+                <label class="govuk-label govuk-radios__label" for="documentType-7">
+                  Hazardous waste facility
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-8" name="documentType" type="radio" value="dam-or-reservoir" data-cy="answer-dam-or-reservoir">
+                <label class="govuk-label govuk-radios__label" for="documentType-8">
+                  Dam or reservoir
+                </label>
+              </div>
+            </div>
+        </fieldset>
+        </div>
+        <form class="form" action="../upload-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

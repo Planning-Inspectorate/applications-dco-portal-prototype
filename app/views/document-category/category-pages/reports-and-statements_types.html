@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{data['document-category']}}</span>
+            <h1 class="govuk-fieldset__heading">
+                Select the document type
+            </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType" name="documentType" type="radio" value="habitat-regulations-assessment-screening-report" data-cy="answer-habitat-regulations-assessment-screening-report">
+                <label class="govuk-label govuk-radios__label" for="documentType">
+                  Habitat Regulations Assessment (HRA) screening report
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-2" name="documentType" type="radio" value="report-to-inform-appropriate-assessment" data-cy="answer-report-to-inform-appropriate-assessment">
+                <label class="govuk-label govuk-radios__label" for="documentType-2">
+                  Report to Inform Appropriate Assessment (RIAA) (where relevant or required)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-3" name="documentType" type="radio" value="statutory-nuisance-statement" data-cy="answer-statutory-nuisance-statement">
+                <label class="govuk-label govuk-radios__label" for="documentType-3">
+                  Statutory nuisance statement
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-4" name="documentType" type="radio" value="consents-and-licences-required-under-other-legislation" data-cy="answer-consents-and-licences-required-under-other-legislation">
+                <label class="govuk-label govuk-radios__label" for="documentType-4">
+                  Consents and licences required under other legislation
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-5" name="documentType" type="radio" value="planning-statement" data-cy="answer-planning-statement">
+                <label class="govuk-label govuk-radios__label" for="documentType-5">
+                  Planning statement
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-6" name="documentType" type="radio" value="design-and-access-statement" data-cy="answer-design-and-access-statement">
+                <label class="govuk-label govuk-radios__label" for="documentType-6">
+                  Design and Access Statement (DAS)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-7" name="documentType" type="radio" value="policy-compliance-document" data-cy="answer-policy-compliance-document">
+                <label class="govuk-label govuk-radios__label" for="documentType-7">
+                  Policy compliance document
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-8" name="documentType" type="radio" value="potential-main-issues-for-the-examination-pmie" data-cy="answer-potential-main-issues-for-the-examination-pmie">
+                <label class="govuk-label govuk-radios__label" for="documentType-8">
+                  Potential Main Issues for the Examination (PMIE) (supported by Principal Areas of Disagreement Summary Statements (PADSS)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-9" name="documentType" type="radio" value="design-approach-document" data-cy="answer-design-approach-document">
+                <label class="govuk-label govuk-radios__label" for="documentType-9">
+                  Design Approach Document (DAD)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-10" name="documentType" type="radio" value="safety-assessment" data-cy="answer-safety-assessment">
+                <label class="govuk-label govuk-radios__label" for="documentType-10">
+                  Safety assessment (where required)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-11" name="documentType" type="radio" value="national-security-issues" data-cy="answer-national-security-issues">
+                <label class="govuk-label govuk-radios__label" for="documentType-11">
+                  National security issues (where required)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-12" name="documentType" type="radio" value="details-of-associated-development" data-cy="answer-details-of-associated-development">
+                <label class="govuk-label govuk-radios__label" for="documentType-12">
+                  Details of associated development, with references to documents
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-13" name="documentType" type="radio" value="draft-statement-of-common-ground" data-cy="answer-draft-statement-of-common-ground">
+                <label class="govuk-label govuk-radios__label" for="documentType-13">
+                  Draft Statement of Common Ground (SoCG) (if available at the acceptance stage)
+                </label>
+              </div>
+            </div>
+        </fieldset>
+        </div>
+        <form class="form" action="../upload-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

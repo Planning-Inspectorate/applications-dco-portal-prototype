@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{data['document-category']}}</span>
+            <h1 class="govuk-fieldset__heading">
+                Select the document type
+            </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType" name="documentType" type="radio" value="location-plans" data-cy="answer-location-plans">
+                  <label class="govuk-label govuk-radios__label" for="documentType">
+                    Location plans
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-2" name="documentType" type="radio" value="land-plans" data-cy="answer-land-plans">
+                  <label class="govuk-label govuk-radios__label" for="documentType-2">
+                    Land plans
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-3" name="documentType" type="radio" value="works-plan" data-cy="answer-works-plan">
+                  <label class="govuk-label govuk-radios__label" for="documentType-3">
+                    Works plan
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-4" name="documentType" type="radio" value="access-plan-and-rights-of-way-plan" data-cy="answer-access-plan-and-rights-of-way-plan">
+                  <label class="govuk-label govuk-radios__label" for="documentType-4">
+                    Access plan and rights of way plan
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-5" name="documentType" type="radio" value="site-layout-plans" data-cy="answer-site-layout-plans">
+                  <label class="govuk-label govuk-radios__label" for="documentType-5">
+                    Site layout plans
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-6" name="documentType" type="radio" value="elevation-drawings" data-cy="answer-elevation-drawings">
+                  <label class="govuk-label govuk-radios__label" for="documentType-6">
+                    Elevation drawings
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-7" name="documentType" type="radio" value="floor-plans" data-cy="answer-floor-plans">
+                  <label class="govuk-label govuk-radios__label" for="documentType-7">
+                    Floor plans
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-8" name="documentType" type="radio" value="car-parking-landscaping-access" data-cy="answer-car-parking-landscaping-access">
+                  <label class="govuk-label govuk-radios__label" for="documentType-8">
+                    Car parking, landscaping, vehicular and pedestrian access
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-9" name="documentType" type="radio" value="drainage-and-surface-water-management" data-cy="answer-drainage-and-surface-water-management">
+                  <label class="govuk-label govuk-radios__label" for="documentType-9">
+                    Drainage and, or surface water management
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-10" name="documentType" type="radio" value="other-detailed-plans-and-sections" data-cy="answer-other-detailed-plans-and-sections">
+                  <label class="govuk-label govuk-radios__label" for="documentType-10">
+                    Other detailed plans and sections
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-11" name="documentType" type="radio" value="plans-of-statutory-and-non-statutory-sites-or-features" data-cy="answer-plans-of-statutory-and-non-statutory-sites-or-features">
+                  <label class="govuk-label govuk-radios__label" for="documentType-11">
+                    Plans of statutory and non-statutory sites or features (for example, nature conservation, habitats, marine conservation zones, water bodies)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-12" name="documentType" type="radio" value="plans-showing-historic-or-scheduled-monument-sites" data-cy="answer-plans-showing-historic-or-scheduled-monument-sites">
+                  <label class="govuk-label govuk-radios__label" for="documentType-12">
+                    Plans showing statutory or non-statutory historic or scheduled monument sites
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-13" name="documentType" type="radio" value="crown-land-plan" data-cy="answer-crown-land-plan">
+                  <label class="govuk-label govuk-radios__label" for="documentType-13">
+                    Crown land plan
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-14" name="documentType" type="radio" value="charts-for-marine-schemes" data-cy="answer-charts-for-marine-schemes">
+                  <label class="govuk-label govuk-radios__label" for="documentType-14">
+                    Charts for marine schemes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-15" name="documentType" type="radio" value="tree-preservation-order-and-hedgerow-plan" data-cy="answer-tree-preservation-order-and-hedgerow-plan">
+                  <label class="govuk-label govuk-radios__label" for="documentType-15">
+                    Tree Preservation Order (TPO) and hedgerow plan
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="documentType-16" name="documentType" type="radio" value="environmental-management-plan" data-cy="answer-environmental-management-plan">
+                  <label class="govuk-label govuk-radios__label" for="documentType-16">
+                    Environmental Management Plan (EMP)
+                  </label>
+                </div>
+              </div>
+        </fieldset>
+        </div>
+        <form class="form" action="../upload-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

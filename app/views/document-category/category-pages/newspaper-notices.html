@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<h1 class="govuk-heading-l">Newspaper notices</h1>
+<h2 class="govuk-heading-m">Documents uploaded</h2>
+<p>This category contains 0 documents.</p>
+<form class="form" action="newspaper-notices_types" method="post">
+  <input type="hidden" name="document-category" value="Newspaper notices">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Upload documents
+  </button>
+</form>
+{% endblock %}

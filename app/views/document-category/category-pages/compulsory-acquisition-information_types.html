@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{data['document-category']}}</span>
+            <h1 class="govuk-fieldset__heading">
+                Select the document type
+            </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType" name="documentType" type="radio" value="statement-of-reasons" data-cy="answer-statement-of-reasons">
+                <label class="govuk-label govuk-radios__label" for="documentType">
+                  Statement of reasons
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-2" name="documentType" type="radio" value="funding-statement" data-cy="answer-funding-statement">
+                <label class="govuk-label govuk-radios__label" for="documentType-2">
+                  Funding statement
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-3" name="documentType" type="radio" value="book-of-reference" data-cy="answer-book-of-reference">
+                <label class="govuk-label govuk-radios__label" for="documentType-3">
+                  Book of Reference (parts 1 to 5)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="documentType-4" name="documentType" type="radio" value="land-and-rights-negotiations-tracker" data-cy="answer-land-and-rights-negotiations-tracker">
+                <label class="govuk-label govuk-radios__label" for="documentType-4">
+                  Land and Rights Negotiations Tracker
+                </label>
+              </div>
+            </div>
+        </fieldset>
+        </div>
+        <form class="form" action="../upload-documents" method="post">
+            <div class="govuk-form-group">
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
