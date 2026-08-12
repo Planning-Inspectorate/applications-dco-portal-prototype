@@ -14,14 +14,17 @@
 {% block content %}
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
-
-<h1 class="govuk-heading-l">Draft development consent order (DCO)</h1>
-<h2 class="govuk-heading-m">Documents uploaded</h2>
-<p>This category contains 0 documents.</p>
-<form class="form" action="draft-dco_types" method="post">
-  <input type="hidden" name="document-category" value="Draft development consent order (DCO)">
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Upload documents
-  </button>
-</form>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Draft development consent order (DCO)</h1>
+    <h2 class="govuk-heading-m">Documents uploaded</h2>
+    <p>This category contains 0 documents.</p>
+    <form class="form" action="draft-dco_types" method="post">
+      <input type="hidden" name="document-category" value="Draft development consent order (DCO)">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Upload documents
+      </button>
+    </form>
+  </div>
+</div>
 {% endblock %}
