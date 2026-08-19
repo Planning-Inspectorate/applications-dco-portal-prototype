@@ -26,32 +26,32 @@
         Upload documents
       </button>
     </form>
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Have you completed this section?
-        </legend>
-        <div id="event-name-hint" class="govuk-hint">
-          You can only mark this section as complete when all your documents have been uploaded and you have removed any documents with a virus
-        </div>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
-              Yes, I’ve completed this section
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-              No, I’ll come back to it later
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
 
     <form class="form" action="/tasklist" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Have you completed this section?
+          </legend>
+          <div id="event-name-hint" class="govuk-hint">
+            You can only mark this section as complete when all your documents have been uploaded and you have removed any documents with a virus
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+                Yes, I’ve completed this section
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+                No, I’ll come back to it later
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
       <div class="govuk-form-group">
         {{ govukButton({ text: "Save and return" }) }}
       </div>
